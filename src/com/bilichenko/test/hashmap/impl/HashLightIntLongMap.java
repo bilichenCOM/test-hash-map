@@ -41,7 +41,7 @@ public class HashLightIntLongMap implements LightIntLongMap {
 
     private int findEntryInd(int bucketInd, int key) {
         while (bucketInd < entries.length) {
-            if (entries[bucketInd].getKey() == key) {
+            if (entries[bucketInd] != null && entries[bucketInd].getKey() == key) {
                 return bucketInd;
             }
             if (bucketInd == entries.length - 1) {
