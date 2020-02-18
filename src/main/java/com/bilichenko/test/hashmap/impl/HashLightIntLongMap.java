@@ -23,8 +23,12 @@ public class HashLightIntLongMap implements LightIntLongMap {
         int bucketInd = computeInd(key);
         LightEntry entry = new LightEntry(key, value);
         insertEntry(bucketInd, entry);
-        size++;
+        incrementSize();
         increaseSizeIfNeeded();
+    }
+
+    private void incrementSize() {
+        size++;
     }
 
     @Override
